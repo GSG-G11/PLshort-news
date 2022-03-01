@@ -8,10 +8,10 @@
 /* Root Variables */
 
 :root {
-  --black: #000000;
+  --black: #333333;
   --white: #ffffff;
+  --light-orange: #ff9a6c;
 }
-
 
 /* ------------------------------------------------------------------
                     ***     General Style        ***
@@ -34,6 +34,8 @@ body {
   width: 100%;
   height: 100%;
   background-color: var(--white);
+  transition: all 0.4s ease-in-out;
+  overflow-x: hidden;
 }
 
 select,
@@ -60,4 +62,172 @@ svg {
 button {
   border: none;
   cursor: pointer;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ff9a6c;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #c07754;
+}
+
+/* nav bar */
+
+.navbar {
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.container__navbar {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.navbar a {
+  float: left;
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: var(--black);
+  text-shadow: 2.5px 5px 10px rgba(0, 0, 0, 0.13);
+}
+
+.dropdown {
+  float: right;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: var(--black);
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 5px;
+  transition: all 0.4s ease-in-out;
+}
+
+.dropdown:hover .dropbtn {
+  background: var(--light-orange);
+  border-radius: 8px;
+  color: var(--white);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  margin: 0 10px;
+  font-size: 1.2rem;
+}
+
+.dropdown-content a:last-child {
+  margin-bottom: 10px;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.news__body {
+  width: 100%;
+  padding: 15px 0;
+}
+.news__container {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 15px;
+}
+
+.news-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: #ddd;
+  padding-bottom: 15px;
+  border-radius: 5px;
+}
+.info__news-card {
+  padding: 5px 15px;
+}
+.image__news-card {
+  margin-bottom: 15px;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  border-radius: 5px 5px 0 0;
+}
+
+.image__news-card > img {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease-in-out;
+}
+.image__news-card:hover > img {
+  transform: rotate(10deg) scale(1.3);
+}
+
+.title__news {
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+.date__news {
+  font-size: 0.8rem;
+  text-align: justify;
+}
+
+.btn__read-more {
+  background: var(--light-orange);
+  border-radius: 8px;
+  color: var(--white);
+  padding: 10px 12px;
+  font-size: 1.1rem;
+  margin: 10px auto;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn__read-more:hover {
+  background: #da8056;
 }
