@@ -38,9 +38,47 @@ const createNewsCard = ({
   );
 };
 
+const categories = [
+  'all',
+  'national',
+  'business',
+  'sports',
+  'world',
+  'politics',
+  'technology',
+  'startup',
+  'entertainment',
+  'miscellaneous',
+  'hatke',
+  'science',
+  'automobile',
+];
+
+categories.forEach((categoryElement) => {
+  addListener(
+    `a[data-category="${categoryElement}"]`,
+    'click',
+    ({ target }) => {
+      querySelector('.news__container').innerHTML = '';
+      querySelector('.loading').style.display = 'flex';
+      const { category } = target.dataset;
+      getNews(category)
+        .then(({ data }) => {
+          querySelector('.loading').style.display = 'none';
+          data.forEach((news) => {
+            createNewsCard(news);
+          });
+        })
+        .catch((error) => {
+          window.location.href = '../error/404.html';
+        });
+    },
+  );
+});
+
 getNews('all')
   .then(({ data }) => {
-    querySelector('.loading').remove();
+    querySelector('.loading').style.display = 'none';
     data.forEach((news) => {
       createNewsCard(news);
     });
