@@ -1,3 +1,4 @@
+/* eslint-disable valid-typeof */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 // ----- Helper Selector ---------------
@@ -14,7 +15,6 @@ const createElement = (tagName, className, parent) => {
 const addListener = (selector, eventName, callback) => {
   querySelector(selector).addEventListener(eventName, callback);
 };
-
 
 const handleError = (id, errorId, message) => {
   const label = querySelector(id);

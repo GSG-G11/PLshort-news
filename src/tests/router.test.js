@@ -45,3 +45,89 @@ describe('Test the unknown path', () => {
       });
   });
 });
+
+describe('Test Fetch  /api/news path', () => {
+  test('It should response the post method when all categories', (done) => {
+    const categoryAll = { category: 'all' };
+    request(app)
+      .post('/api/news')
+      .send(categoryAll)
+      .expect(201)
+      .expect('Content-Type', /json/)
+      .end((error, { statusCode, body }) => {
+        if (error) return done(error);
+        const { category } = body;
+        expect(statusCode).toBe(201);
+        expect(category).toBe('all');
+        done();
+      });
+  });
+
+  test('It should response the post method when category sport', (done) => {
+    const categorySport = { category: 'sport' };
+    request(app)
+      .post('/api/news')
+      .send(categorySport)
+      .expect(201)
+      .expect('Content-Type', /json/)
+      .end((error, { statusCode, body }) => {
+        if (error) return done(error);
+        const { category } = body;
+        expect(statusCode).toBe(201);
+        expect(category).toBe('sport');
+        done();
+      });
+  });
+
+  test('It should response the post method when category science', (done) => {
+    const categoryScience = { category: 'science' };
+    request(app)
+      .post('/api/news')
+      .send(categoryScience)
+      .expect(201)
+      .expect('Content-Type', /json/)
+      .end((error, { statusCode, body }) => {
+        if (error) return done(error);
+        const { category } = body;
+        expect(statusCode).toBe(201);
+        expect(category).toBe('science');
+        done();
+      });
+  });
+});
+
+describe('Test Fetch  /api/login path', () => {
+  test('It should response the post method', (done) => {
+    const invalidDataAuth = {
+      email: 'emaIl_023@email.com',
+      password: 'Super123pass@@#',
+    };
+    request(app)
+      .post('/api/login')
+      .send(invalidDataAuth)
+      .expect(401)
+      .expect('Content-Type', 'text/html; charset=UTF-8')
+      .end((error, { statusCode }) => {
+        if (error) return done(error);
+        expect(statusCode).toBe(401);
+        done();
+      });
+  });
+
+  test('It should response the post method', (done) => {
+    const validDataAuth = {
+      email: 'Admin_123@admin.com',
+      password: 'Admin_123@admin.com',
+    };
+    request(app)
+      .post('/api/login')
+      .send(validDataAuth)
+      .expect(302)
+      .expect('Content-Type', 'text/plain; charset=utf-8')
+      .end((error, { statusCode }) => {
+        if (error) return done(error);
+        expect(statusCode).toBe(302);
+        done();
+      });
+  });
+});

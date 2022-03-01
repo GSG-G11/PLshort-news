@@ -8,7 +8,9 @@
   "parserOptions": {
     "ecmaVersion": "latest"
   },
-  "rules": {},
+  "rules": {
+    "linebreak-style": "off"
+  },
   "globals": {
     "window": true,
     "document": true

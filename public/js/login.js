@@ -51,7 +51,8 @@ const handleSubmitFrom = (event) => {
   if (checkEmail() && checkPassword()) {
     event.preventDefault();
     // redirect to news page
-    window.location.assign('/home');
+    querySelector('form').submit();
+    // window.location.assign('/home');
     // window.location.href = '../news.html';
   } else {
     event.preventDefault();

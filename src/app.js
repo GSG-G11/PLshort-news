@@ -3,6 +3,7 @@ const { join } = require('path');
 require('env2')('.env');
 const compression = require('compression');
 const router = require('./routes/index');
+const middlewareAuth = require('./controllers/middleware');
 
 const app = express();
 app.set('port', process.env.PORT || 3000);
@@ -16,6 +17,8 @@ app.use(
     maxAge: '30d',
   }),
 );
+
+app.use(middlewareAuth);
 
 app.use(router);
 
