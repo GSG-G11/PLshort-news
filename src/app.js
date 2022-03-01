@@ -1,24 +1,11 @@
 const express = require('express');
 const path = require('path');
-// const helmet = require('helmet');
+
 const compression = require('compression');
 require('env2')('.env');
 
 const app = express();
 app.set('port', process.env.PORT || 3000);
-
-// disable powered by express header
-// app.use(
-//   helmet.contentSecurityPolicy({
-//     useDefaults: false,
-//     directives: {
-//       defaultSrc: ["'self'"],
-//       scriptSrc: ["'self'", 'cdn.dribbble.com'],
-//       objectSrc: ["'none'"],
-//       upgradeInsecureRequests: [],
-//     },
-//   }),
-// );
 
 // use compression middleware
 app.use(compression());
