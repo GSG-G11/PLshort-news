@@ -21,7 +21,11 @@ const getNews = async ({ body }, res) => {
   const { category } = body;
 
   fetchNews(category, 'GET').then((data) => {
-    res.status(201).json(data);
+    if (data.success === false) {
+      res.status(404).json(data.error);
+    } else {
+      res.status(201).json(data);
+    }
   });
 };
 
