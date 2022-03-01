@@ -1,3 +1,7 @@
+/* eslint-disable consistent-return */
+/* eslint-disable operator-linebreak */
+/* eslint-disable no-useless-escape */
+/* eslint-disable no-undef */
 // ----- Helper Selector ---------------
 
 const checkEmail = () => {
@@ -44,9 +48,9 @@ const checkPassword = () => {
 };
 
 const handleSubmitFrom = (event) => {
-  if (checkEmail() && checkPassword() ) {
+  if (checkEmail() && checkPassword()) {
     event.preventDefault();
-    //redirect to news page
+    // redirect to news page
     window.location.assign('/home');
     // window.location.href = '../news.html';
   } else {
@@ -57,6 +61,3 @@ const handleSubmitFrom = (event) => {
 addListener('#email', 'focusout', checkEmail);
 addListener('#password', 'focusout', checkPassword);
 addListener('form', 'submit', handleSubmitFrom);
-
-
-
