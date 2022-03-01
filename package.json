@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src/",
-    "dev": "nodemon ./src/app.js",
+    "dev": "nodemon ./src/",
     "test": "jest"
   },
   "repository": {
