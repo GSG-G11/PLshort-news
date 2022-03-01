@@ -95,3 +95,39 @@ describe('Test Fetch  /api/news path', () => {
       });
   });
 });
+
+describe('Test Fetch  /api/login path', () => {
+  test('It should response the post method', (done) => {
+    const invalidDataAuth = {
+      email: 'emaIl_023@email.com',
+      password: 'Super123pass@@#',
+    };
+    request(app)
+      .post('/api/login')
+      .send(invalidDataAuth)
+      .expect(401)
+      .expect('Content-Type', 'text/html; charset=UTF-8')
+      .end((error, { statusCode }) => {
+        if (error) return done(error);
+        expect(statusCode).toBe(401);
+        done();
+      });
+  });
+
+  test('It should response the post method', (done) => {
+    const validDataAuth = {
+      email: 'Admin_123@admin.com',
+      password: 'Admin_123@admin.com',
+    };
+    request(app)
+      .post('/api/login')
+      .send(validDataAuth)
+      .expect(302)
+      .expect('Content-Type', 'text/plain; charset=utf-8')
+      .end((error, { statusCode }) => {
+        if (error) return done(error);
+        expect(statusCode).toBe(302);
+        done();
+      });
+  });
+});

@@ -29,4 +29,8 @@ const getNews = async ({ body }, res) => {
   });
 };
 
-module.exports = { getHomePage, getNews };
+const handleMiddleware = (req, res) => {
+  res.redirect('/home');
+};
+
+module.exports = { getHomePage, getNews, handleMiddleware };
