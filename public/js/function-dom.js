@@ -14,3 +14,18 @@ const createElement = (tagName, className, parent) => {
 const addListener = (selector, eventName, callback) => {
   querySelector(selector).addEventListener(eventName, callback);
 };
+
+
+const handleError = (id, errorId, message) => {
+  const label = querySelector(id);
+  const errorText = createElement('p', 'error', label);
+  errorText.id = `${errorId}`;
+  errorText.textContent = message;
+};
+
+const removeHandleError = (id) => {
+  const errorText = querySelector(id);
+  if (typeof errorText !== undefined && errorText !== null) {
+    errorText.remove();
+  }
+};
