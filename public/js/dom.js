@@ -40,6 +40,7 @@ const createNewsCard = ({
 
 getNews('all')
   .then(({ data }) => {
+    querySelector('.loading').remove();
     data.forEach((news) => {
       createNewsCard(news);
     });
