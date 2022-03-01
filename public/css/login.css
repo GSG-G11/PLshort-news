@@ -16,7 +16,6 @@
 /* ------------------------------------------------------------------
                     ***     General Style        ***
 --------------------------------------------------------------------- */
-
 *,
 *::after,
 *::before {
@@ -24,16 +23,30 @@
   margin: 0;
   box-sizing: border-box;
 }
-
 html {
   scroll-behavior: smooth;
 }
-
 body {
-  font-family: 'Montserrat', sans-serif;
-  width: 100%;
-  height: 100%;
-  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, hsl(34, 90%, 42%), #ffde25);
+  color: #333;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.2rem;
+}
+
+p,
+div {
+  margin: 0;
+}
+
+li,
+ul,
+ol {
+  list-style: none;
 }
 
 select,
@@ -60,4 +73,59 @@ svg {
 button {
   border: none;
   cursor: pointer;
+}
+
+.form__title {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.register__form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 30%;
+  background: #fff;
+  color: #333;
+  border-radius: 5px;
+  box-shadow: 1px 1px 15px 5px #afafaf27;
+  padding: 20px 10px;
+}
+
+.register__form > label {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 15px auto;
+  text-align: start;
+}
+
+.register__form > label > input {
+  background-color: #ffffff;
+  color: #9c9c9c;
+  border-radius: 5px;
+  box-shadow: 1px 1px 8px 5px #aaaaaa50;
+  height: 40px;
+  margin: 10px 0;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register__form > button {
+  width: 80%;
+  margin: 35px auto 10px auto;
+  color: #fff;
+  background-color: #ee7e34;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.register__form .error {
+  color: #c22727;
+  font-size: 1rem;
+  margin-top: 5px;
 }
