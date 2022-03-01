@@ -4,7 +4,8 @@
   "description": "PSshort-news is website to dispaly news by category",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./src/",
+    "start": "node ./src/",
+    "dev": "nodemon ./src/app.js",
     "test": "jest"
   },
   "repository": {
@@ -22,7 +23,8 @@
     "env2": "^2.2.2",
     "express": "^4.17.3",
     "helmet": "^5.0.2",
-    "node-fetch": "^3.2.1"
+    "node-fetch": "^3.2.1",
+    "compression": "^1.7.4"
   },
   "devDependencies": {
     "eslint": "^8.10.0",
