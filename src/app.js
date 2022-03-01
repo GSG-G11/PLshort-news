@@ -19,6 +19,9 @@ app.use(
     maxAge: '30d',
   }),
 );
+app.use('/home',(req,res)=>{
+  res.sendFile(path.join(__dirname,'..','public','news.html'))
+})
 
 app.use((req, res) => {
   res
