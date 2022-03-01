@@ -174,21 +174,21 @@ button {
   width: 80%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
 }
 
 .news-card {
   background-color: #ddd;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
   border-radius: 5px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 .info__news-card {
   padding: 5px 15px;
-  height: 200px;
+  height: 300px;
   width: 100%;
-  max-height: 200px;
+  max-height: 300px;
   overflow: hidden;
   position: relative;
 }
@@ -210,14 +210,23 @@ button {
 
 .title__news {
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 0.7rem;
+  height: 40px;
+  overflow: hidden;
+}
+
+.content__news {
+  font-size: 0.9rem;
   text-align: justify;
-  margin-bottom: 1rem;
+  overflow: hidden;
 }
 
 .date__news {
-  font-size: 0.8rem;
-  text-align: justify;
+  margin-top: 5px;
+  font-size: 0.7rem;
+  text-align: start;
 }
 
 .btn__read-more {
@@ -230,7 +239,7 @@ button {
   margin: 10px auto;
   transition: all 0.4s ease-in-out;
   position: absolute;
-  bottom: 5px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -245,7 +254,7 @@ button {
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   background-color: var(--white);
   transition: all 0.4s ease-in-out;
   overflow-x: hidden;
