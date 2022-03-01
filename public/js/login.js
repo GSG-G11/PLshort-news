@@ -44,16 +44,19 @@ const checkPassword = () => {
 };
 
 const handleSubmitFrom = (event) => {
-  if (checkEmail() || checkPassword() ) {
+  if (checkEmail() && checkPassword() ) {
     event.preventDefault();
-    console.log('done');
+    //redirect to news page
+    // window.location.assign('../news.html');
+    // window.location.href = '../news.html';
   } else {
     event.preventDefault();
-    console.log('done_error');
   }
 };
 
 addListener('#email', 'focusout', checkEmail);
 addListener('#password', 'focusout', checkPassword);
-
 addListener('form', 'submit', handleSubmitFrom);
+
+
+
