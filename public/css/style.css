@@ -184,13 +184,18 @@ button {
   text-align: center;
   align-items: center;
   justify-content: center;
+  background-color: #ddd;
+  padding-bottom: 15px;
+  border-radius: 5px;
 }
-
+.info__news-card {
+  padding: 5px 15px;
+}
 .image__news-card {
   margin-bottom: 15px;
   overflow: hidden;
   transition: all 0.4s ease-in-out;
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
 }
 
 .image__news-card > img {
