@@ -45,3 +45,53 @@ describe('Test the unknown path', () => {
       });
   });
 });
+
+describe('Test Fetch  /api/news path', () => {
+  test('It should response the post method when all categories', (done) => {
+    const categoryAll = { category: 'all' };
+    request(app)
+      .post('/api/news')
+      .send(categoryAll)
+      .expect(201)
+      .expect('Content-Type', /json/)
+      .end((error, { statusCode, body }) => {
+        if (error) return done(error);
+        const { category } = body;
+        expect(statusCode).toBe(201);
+        expect(category).toBe('all');
+        done();
+      });
+  });
+
+  test('It should response the post method when category sport', (done) => {
+    const categorySport = { category: 'sport' };
+    request(app)
+      .post('/api/news')
+      .send(categorySport)
+      .expect(201)
+      .expect('Content-Type', /json/)
+      .end((error, { statusCode, body }) => {
+        if (error) return done(error);
+        const { category } = body;
+        expect(statusCode).toBe(201);
+        expect(category).toBe('sport');
+        done();
+      });
+  });
+
+  test('It should response the post method when category science', (done) => {
+    const categoryScience = { category: 'science' };
+    request(app)
+      .post('/api/news')
+      .send(categoryScience)
+      .expect(201)
+      .expect('Content-Type', /json/)
+      .end((error, { statusCode, body }) => {
+        if (error) return done(error);
+        const { category } = body;
+        expect(statusCode).toBe(201);
+        expect(category).toBe('science');
+        done();
+      });
+  });
+});
