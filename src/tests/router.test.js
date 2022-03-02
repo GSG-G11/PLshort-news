@@ -165,4 +165,35 @@ describe('Test Fetch  /api/login path', () => {
         done();
       });
   });
+
+  test('It should response the GET method, in /register', (done) => {
+    request(app)
+      .get('/register')
+      .expect(200)
+      .expect('Content-Type', 'text/html; charset=UTF-8')
+      .end((error, response) => {
+        if (error) return done(error);
+        expect(response.statusCode).toBe(200);
+        done();
+      });
+  });
+});
+
+describe('Test Fetch  /api/register path', () => {
+  test('It should response the post method', (done) => {
+    const userData = {
+      email: 'New_email_456@email.com',
+      password: 'New_email_456@email.com',
+    };
+    request(app)
+      .post('/api/register')
+      .send(userData)
+      .expect(302)
+      .expect('Content-Type', 'text/plain; charset=utf-8')
+      .end((error, { statusCode }) => {
+        if (error) return done(error);
+        expect(statusCode).toBe(302);
+        done();
+      });
+  });
 });

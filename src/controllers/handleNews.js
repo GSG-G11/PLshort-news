@@ -1,13 +1,4 @@
 const fetch = require('node-fetch');
-const { join } = require('path');
-
-const getHomePage = (req, res, next) => {
-  try {
-    res.sendFile(join(__dirname, '..', '..', 'public', 'news.html'));
-  } catch (err) {
-    next(err);
-  }
-};
 
 const fetchNews = async (category, method) => {
   const query = new URLSearchParams({ category });
@@ -30,8 +21,6 @@ const getNews = async ({ body }, res) => {
   });
 };
 
-const handleMiddleware = (req, res) => {
-  res.redirect('/home');
+module.exports = {
+  getNews,
 };
-
-module.exports = { getHomePage, getNews, handleMiddleware };
