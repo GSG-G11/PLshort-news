@@ -3,6 +3,7 @@
 const request = require('supertest');
 
 const app = require('../app');
+const { users } = require('../models/data.json');
 
 describe('Test the root path', () => {
   test('It should response the GET method', (done) => {
@@ -127,6 +128,40 @@ describe('Test Fetch  /api/login path', () => {
       .end((error, { statusCode }) => {
         if (error) return done(error);
         expect(statusCode).toBe(302);
+        done();
+      });
+  });
+
+  test('It should response the post method,use data.json', (done) => {
+    const validDataAuth = {
+      email: users[3].email,
+      password: users[3].password,
+    };
+    request(app)
+      .post('/api/login')
+      .send(validDataAuth)
+      .expect(302)
+      .expect('Content-Type', 'text/plain; charset=utf-8')
+      .end((error, { statusCode }) => {
+        if (error) return done(error);
+        expect(statusCode).toBe(302);
+        done();
+      });
+  });
+
+  test('It should response the post method,use data.json', (done) => {
+    const invalidDataAuth = {
+      email: users[1].email,
+      password: users[2].password,
+    };
+    request(app)
+      .post('/api/login')
+      .send(invalidDataAuth)
+      .expect(401)
+      .expect('Content-Type', 'text/html; charset=UTF-8')
+      .end((error, { statusCode }) => {
+        if (error) return done(error);
+        expect(statusCode).toBe(401);
         done();
       });
   });
