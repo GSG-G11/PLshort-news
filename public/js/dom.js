@@ -6,6 +6,7 @@ const createNewsCard = ({
   imageUrl,
   readMoreUrl,
   time,
+  content,
   title,
 }) => {
   const newsContainer = querySelector('.news__container');
@@ -20,6 +21,9 @@ const createNewsCard = ({
 
   const titleNews = createElement('h2', 'title__news', infoNewsCard);
   titleNews.textContent = title;
+
+  const bodyContent = createElement('p', 'content__news', infoNewsCard);
+  bodyContent.textContent = content;
 
   const dateNews = createElement('p', 'date__news', infoNewsCard);
   const shortBy = createElement('strong', 'short__by', dateNews);
