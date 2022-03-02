@@ -42,51 +42,28 @@ const createNewsCard = ({
   );
 };
 
-const categories = [
-  'all',
-  'national',
-  'business',
-  'sports',
-  'world',
-  'politics',
-  'technology',
-  'startup',
-  'entertainment',
-  'miscellaneous',
-  'hatke',
-  'science',
-  'automobile',
-];
+const handleGetNews = (category) => {
+  getNews(category)
+    .then(({ data }) => {
+      querySelector('.loading').style.display = 'none';
+      data.forEach((news) => {
+        createNewsCard(news);
+      });
+    })
+    .catch((error) => {
+      window.location.href = '/error/404.html';
+    });
+};
 
-categories.forEach((categoryElement) => {
-  addListener(
-    `a[data-category="${categoryElement}"]`,
-    'click',
-    ({ target }) => {
-      querySelector('.news__container').innerHTML = '';
-      querySelector('.loading').style.display = 'flex';
-      const { category } = target.dataset;
-      getNews(category)
-        .then(({ data }) => {
-          querySelector('.loading').style.display = 'none';
-          data.forEach((news) => {
-            createNewsCard(news);
-          });
-        })
-        .catch((error) => {
-          window.location.href = '../error/404.html';
-        });
-    },
-  );
+// const itemCategory = querySelectorAll('.item-category');
+querySelectorAll('.item-category').forEach(({ lastChild }) => {
+  const { data } = lastChild;
+  addListener(`a[data-category="${data}"]`, 'click', ({ target }) => {
+    querySelector('.news__container').innerHTML = '';
+    querySelector('.loading').style.display = 'flex';
+    const { category } = target.dataset;
+    handleGetNews(category);
+  });
 });
 
-getNews('all')
-  .then(({ data }) => {
-    querySelector('.loading').style.display = 'none';
-    data.forEach((news) => {
-      createNewsCard(news);
-    });
-  })
-  .catch((error) => {
-    window.location.href = '../error/404.html';
-  });
+handleGetNews('all');
