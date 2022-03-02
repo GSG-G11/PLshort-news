@@ -21,6 +21,34 @@ const getNews = async ({ body }, res) => {
   });
 };
 
+const handleSearch = async ({ body }, res) => {
+  const { category, query } = body;
+
+  fetchNews(category, 'GET').then((dataNews) => {
+    const { data } = dataNews;
+    if (dataNews.success === false) {
+      res.status(404).json(dataNews.error);
+    } else {
+      const newsFiltered = data.filter((news) => {
+        const { content } = news;
+        const contentLowerCase = content.toLowerCase();
+        const queryLowerCase = query.toLowerCase();
+        return contentLowerCase.startsWith(queryLowerCase);
+      });
+      if (newsFiltered.length <= 0) {
+        res.status(201).json({
+          data: [],
+          success: true,
+          message: "Sorry, No information's",
+        });
+        return;
+      }
+      res.status(201).json(newsFiltered);
+    }
+  });
+};
+
 module.exports = {
   getNews,
+  handleSearch,
 };

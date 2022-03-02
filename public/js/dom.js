@@ -42,6 +42,13 @@ const createNewsCard = ({
   );
 };
 
+const createNotFoundCard = (message) => {
+  const newsContainer = querySelector('.news__container');
+
+  const notFoundCard = createElement('div', 'not-found', newsContainer);
+  notFoundCard.textContent = message;
+};
+
 const handleGetNews = (category) => {
   getNews(category)
     .then(({ data }) => {
@@ -55,10 +62,10 @@ const handleGetNews = (category) => {
     });
 };
 
-// const itemCategory = querySelectorAll('.item-category');
 querySelectorAll('.item-category').forEach(({ lastChild }) => {
   const { data } = lastChild;
   addListener(`a[data-category="${data}"]`, 'click', ({ target }) => {
+    querySelector('#search-input').dataset.category = data;
     querySelector('.news__container').innerHTML = '';
     querySelector('.loading').style.display = 'flex';
     const { category } = target.dataset;
@@ -66,4 +73,41 @@ querySelectorAll('.item-category').forEach(({ lastChild }) => {
   });
 });
 
-handleGetNews('all');
+const handleGetSearchNews = (category, query) => {
+  getSearched(category, query)
+    .then((data) => {
+      querySelector('.loading').style.display = 'none';
+      if (data.success === true) {
+        createNotFoundCard(data.message);
+        return;
+      }
+      data.forEach((news) => {
+        createNewsCard(news);
+      });
+    })
+    .catch((error) => {
+      window.location.href = '/error/404.html';
+    });
+};
+
+addListener('#search-input', 'keyup', (event) => {
+  const { target } = event;
+  if (event.keyCode === 13 && target.value.length > 0) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    querySelector('.news__container').innerHTML = '';
+    querySelector('.loading').style.display = 'flex';
+    const { category } = target.dataset;
+    const { value: query } = target;
+    handleGetSearchNews(category, query);
+  } else if (target.value.length <= 0) {
+    querySelector('.news__container').innerHTML = '';
+    handleGetNews('all');
+  }
+});
+
+window.onload = () => {
+  const defaultCategory = 'all';
+  querySelector('#search-input').dataset.category = defaultCategory;
+  handleGetNews(defaultCategory);
+};
