@@ -82,17 +82,20 @@ Also, in the beginning, there is a (fake) website log-in for login simulations.
   │   ║   ╠──=> dom.js
   │   ║   ╠──=> fetchData.js
   │   ║   ╠──=> function-dom.js
-  │   ║   ╚──=> login.js
+  │   ║   ╠──=> login.js
+  │   ║   ╚──=> register.js
   │   ║
   │   ╠──=> index.html
-  │   ╚──=> news.html
+  │   ╠──=> news.html
+  │   ╚──=> register.html
   │
   ┡═══╦═> src
   │   ║
   │   ╠═=═╦═> controller
-  │   ║   ╠──=> error.js
-  │   ║   ╠──=> error.js
-  │   ║   ╚──=> news.js
+  │   ║   ╠──=> handleAuth.js
+  │   ║   ╠──=> handleError.js
+  │   ║   ╠──=> handleNews.js
+  │   ║   ╚──=> middleware.js
   │   ║
   │   ╠═=═╦═> models
   │   ║   ╚──=> data.json
@@ -100,6 +103,7 @@ Also, in the beginning, there is a (fake) website log-in for login simulations.
   │   ╠═══╦═> routes
   │   ║   ╠──=> error.js
   │   ║   ╠──=> index.js
+  │   ║   ╠──=> login.js
   │   ║   ╚──=> news.js
   │   ║
   │   ╠═══╦═> test
