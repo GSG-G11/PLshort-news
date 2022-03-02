@@ -61,23 +61,23 @@ Also, in the beginning, there is a (fake) website log-in for login simulations.
 
 ```
   ~
-  ┡══=╦═> public
+  ┡═══╦═> public
   │   ║
-  │   ╠═=═╦═> css
+  │   ╠═══╦═> css
   │   ║   ╠──=> error.css
   │   ║   ╠──=> login.css
   │   ║   ╚──=> style.html
   │   ║
-  │   ╠═=═╦═> error
+  │   ╠═══╦═> error
   │   ║   ╠──=> 401.html
   │   ║   ╠──=> 404.html
   │   ║   ╚──=> 500.html
   │   ║
-  │   ╠═=═╦═> img
+  │   ╠═══╦═> img
   │   ║   ╠──=> error-page.gif
   │   ║   ╚──=> favicon.ico
   │   ║
-  │   ╠═=═╦═> js
+  │   ╠═══╦═> js
   │   ║   ╠──=> dom.js
   │   ║   ╠──=> fetchData.js
   │   ║   ╠──=> function-dom.js
@@ -86,26 +86,26 @@ Also, in the beginning, there is a (fake) website log-in for login simulations.
   │   ╠──=> index.html
   │   ╚──=> news.html
   │
-  ┡══=╦═> src
+  ┡═══╦═> src
   │   ║
   │   ╠═=═╦═> controller
   │   ║   ╠──=> error.js
   │   ║   ╠──=> error.js
   │   ║   ╚──=> news.js
   │   ║
-  │   ╠═=═╦═> routes
+  │   ╠═══╦═> routes
   │   ║   ╠──=> error.js
   │   ║   ╠──=> index.js
   │   ║   ╚──=> news.js
   │   ║
-  │   ╠═=═╦═> test
+  │   ╠═══╦═> test
   │   ║   ╚──=> router.test.js
   │   ║
   │   ╠──=> app.js
   │   ╚──=> index.js
   │
-  ┡══=═> .gitignore
-  ┡══=═> .eslintrc.json
+  ┡════> .gitignore
+  ┡════> .eslintrc.json
   ┡════> package.json
   ╘════> README.md
 

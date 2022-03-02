@@ -130,6 +130,29 @@ button {
   margin-top: 5px;
 }
 
+.title__home-page {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  font-size: 3.2rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+@media (max-width: 1300px) {
+  .register__form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 50%;
+    background: #fff;
+    color: #333;
+    border-radius: 5px;
+    box-shadow: 1px 1px 15px 5px #afafaf27;
+    padding: 20px 10px;
+  }
+}
+
 @media (max-width: 800px) {
   .register__form {
     display: flex;
