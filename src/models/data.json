@@ -1,0 +1,84 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "Admin_123@admin.com",
+      "password": "Admin_123@admin.com"
+    },
+    {
+      "id": 2,
+      "email": "Admin_321@admin.com",
+      "password": "Admin_321@admin.com"
+    },
+    {
+      "id": 3,
+      "email": "braaAwin_2020@admin.com",
+      "password": "braaAwin_2020@admin.com"
+    },
+    {
+      "id": 4,
+      "email": "Ahmedqeshta_2020@admin.com",
+      "password": "Ahmedqeshta_2020@admin.com"
+    },
+    {
+      "id": 5,
+      "email": "New_email_123@email.com",
+      "password": "New_email_123@email.com"
+    },
+    {
+      "id": 6,
+      "email": "New_email_456@email.com",
+      "password": "New_email_456@email.com"
+    },
+    {
+      "id": 7,
+      "email": "New_email_456@email.com",
+      "password": "New_email_456@email.com"
+    },
+    {
+      "id": 8,
+      "email": "New_email_456@email.com",
+      "password": "New_email_456@email.com"
+    },
+    {
+      "id": 9,
+      "email": "New_email_456@email.com",
+      "password": "New_email_456@email.com"
+    },
+    {
+      "id": 10,
+      "email": "New_email_456@email.com",
+      "password": "New_email_456@email.com"
+    },
+    {
+      "id": 11,
+      "email": "New_email_456@email.com",
+      "password": "New_email_456@email.com"
+    },
+    {
+      "id": 12,
+      "email": "New_email_456@email.com",
+      "password": "New_email_456@email.com"
+    },
+    {
+      "id": 13,
+      "email": "vefe@mailinator.com",
+      "password": "Pa$$w0rd!"
+    },
+    {
+      "id": 14,
+      "email": "New_email_456@email.com",
+      "password": "New_email_456@email.com"
+    },
+    {
+      "id": 15,
+      "email": "New_email_456@email.com",
+      "password": "New_email_456@email.com"
+    },
+    {
+      "id": 16,
+      "email": "tarTveriv_123@mailinator.com",
+      "password": "tarTveriv_123@mailinator.com"
+    }
+  ]
+}

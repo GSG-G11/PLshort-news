@@ -9,17 +9,17 @@
     <link rel="stylesheet" href="css/login.css" />
   </head>
   <body>
-    <h2 class="title__home-page">Welcome back into PL News</h2>
+    <h2 class="title__home-page">Welcome To PL News</h2>
     <!-- body -->
     <form
       class="register__form"
       id="registerForm"
       novalidate
       autocomplete="off"
-      action="/api/login"
+      action="/api/register"
       method="POST"
     >
-      <h1 class="form__title">Login</h1>
+      <h1 class="form__title">Register</h1>
       <label for="email" id="email-label"
         >Email
         <input
@@ -27,7 +27,7 @@
           name="email"
           id="email"
           required
-          placeholder="Email | EX:example@example.com"
+          placeholder="Enter Your Email Address"
           autocomplete="off"
         />
       </label>
@@ -41,12 +41,10 @@
           placeholder="**********"
         />
       </label>
-      <p class="new__register">
-        New to PL ShortNews?<a href="/register">Create an account.</a>
-      </p>
+      <p class="new__login">Have account?<a href="/">Login now.</a></p>
       <button type="submit">Submit</button>
     </form>
     <script src="js/function-dom.js" type="text/javascript"></script>
-    <script src="js/login.js" type="text/javascript"></script>
+    <script src="js/register.js" type="text/javascript"></script>
   </body>
 </html>

@@ -10,6 +10,7 @@
 - [User Journey](#Journey)
 - [User stories](#stories)
 - [File Structure](#file-structure)
+- [To Login](#to-login)
 - [Installing the project locally](#install)
 - [Team members](#team)
 
@@ -61,56 +62,80 @@ Also, in the beginning, there is a (fake) website log-in for login simulations.
 
 ```
   ~
-  ┡══=╦═> public
+  ┡═══╦═> public
   │   ║
-  │   ╠═=═╦═> css
+  │   ╠═══╦═> css
   │   ║   ╠──=> error.css
   │   ║   ╠──=> login.css
   │   ║   ╚──=> style.html
   │   ║
-  │   ╠═=═╦═> error
+  │   ╠═══╦═> error
   │   ║   ╠──=> 401.html
   │   ║   ╠──=> 404.html
   │   ║   ╚──=> 500.html
   │   ║
-  │   ╠═=═╦═> img
+  │   ╠═══╦═> img
   │   ║   ╠──=> error-page.gif
   │   ║   ╚──=> favicon.ico
   │   ║
-  │   ╠═=═╦═> js
+  │   ╠═══╦═> js
   │   ║   ╠──=> dom.js
   │   ║   ╠──=> fetchData.js
   │   ║   ╠──=> function-dom.js
-  │   ║   ╚──=> login.js
+  │   ║   ╠──=> login.js
+  │   ║   ╚──=> register.js
   │   ║
   │   ╠──=> index.html
-  │   ╚──=> news.html
+  │   ╠──=> news.html
+  │   ╚──=> register.html
   │
-  ┡══=╦═> src
+  ┡═══╦═> src
   │   ║
   │   ╠═=═╦═> controller
-  │   ║   ╠──=> error.js
-  │   ║   ╠──=> error.js
-  │   ║   ╚──=> news.js
+  │   ║   ╠──=> handleAuth.js
+  │   ║   ╠──=> handleError.js
+  │   ║   ╠──=> handleNews.js
+  │   ║   ╚──=> middleware.js
   │   ║
-  │   ╠═=═╦═> routes
+  │   ╠═=═╦═> models
+  │   ║   ╚──=> data.json
+  │   ║
+  │   ╠═══╦═> routes
   │   ║   ╠──=> error.js
   │   ║   ╠──=> index.js
+  │   ║   ╠──=> login.js
   │   ║   ╚──=> news.js
   │   ║
-  │   ╠═=═╦═> test
+  │   ╠═══╦═> test
   │   ║   ╚──=> router.test.js
   │   ║
   │   ╠──=> app.js
   │   ╚──=> index.js
   │
-  ┡══=═> .gitignore
-  ┡══=═> .eslintrc.json
+  ┡════> .gitignore
+  ┡════> .eslintrc.json
   ┡════> package.json
   ╘════> README.md
 
-
 ```
+
+## 👉🏻 **Please Use Email and password This** <span id='to-login'></span>
+
+ <p>
+    <small>email: </small>
+    <strong>Admin_123@admin.com</strong>
+</p>
+<p>
+     <small>password: </small>
+    <strong>Admin_123@admin.com</strong>
+</p>
+    
+<mark>Note:</mark>
+<small>Can use Emails and password in file
+<code>~/models/data.json</code>
+</small>
+
+---
 
 ## 👉🏻 **Installing the project locally** <span id='install'></span>
 
