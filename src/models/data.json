@@ -84,6 +84,21 @@
       "id": 17,
       "email": "gefezyxuhi@mailinator.com",
       "password": "Pa$$w0rd!"
+    },
+    {
+      "id": 18,
+      "email": "New_email_456@email.com",
+      "password": "New_email_456@email.com"
+    },
+    {
+      "id": 19,
+      "email": "New_email_456@email.com",
+      "password": "New_email_456@email.com"
+    },
+    {
+      "id": 20,
+      "email": "New_email_456@email.com",
+      "password": "New_email_456@email.com"
     }
   ]
 }
