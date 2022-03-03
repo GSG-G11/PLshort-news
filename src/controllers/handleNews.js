@@ -30,10 +30,13 @@ const handleSearch = async ({ body }, res) => {
       res.status(404).json(dataNews.error);
     } else {
       const newsFiltered = data.filter((news) => {
-        const { content } = news;
-        const contentLowerCase = content.toLowerCase();
+        const { content, title } = news;
+        // const titleLowerCase = title.toLowerCase();
+        // const contentLowerCase = content.toLowerCase();
         const queryLowerCase = query.toLowerCase();
-        return contentLowerCase.startsWith(queryLowerCase);
+        const resultContent = content.toLowerCase().startsWith(queryLowerCase);
+        const resultTitle = title.toLowerCase().startsWith(queryLowerCase);
+        return resultContent || resultTitle;
       });
       if (newsFiltered.length <= 0) {
         res.status(201).json({

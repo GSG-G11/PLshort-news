@@ -31,8 +31,8 @@ const addUser = (req, res, next) => {
 
   const newUser = {
     id: newUserId,
-    email,
-    password,
+    email: email.trim(),
+    password: password.trim(),
   };
 
   // add the new User to the data object

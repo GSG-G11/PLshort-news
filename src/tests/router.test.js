@@ -63,6 +63,19 @@ describe('Test Fetch  /api/news path', () => {
         done();
       });
   });
+  test('It should response the post method when  category (all), and search key (a)', (done) => {
+    const categoryAll = { category: 'all', query: 'a' };
+    request(app)
+      .post('/api/news/search')
+      .send(categoryAll)
+      .expect(201)
+      .expect('Content-Type', /json/)
+      .end((error, { statusCode }) => {
+        if (error) return done(error);
+        expect(statusCode).toBe(201);
+        done();
+      });
+  });
 
   test('It should response the post method when category sport', (done) => {
     const categorySport = { category: 'sport' };
