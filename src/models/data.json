@@ -3,102 +3,12 @@
     {
       "id": 1,
       "email": "Admin_123@admin.com",
-      "password": "Admin_123@admin.com"
+      "password": "$2a$10$vFeq7GNpoB8hZzGxGGJhEebGEhDd.nLVK7Gw5Zk0BN4020roApvhW"
     },
     {
       "id": 2,
-      "email": "Admin_321@admin.com",
-      "password": "Admin_321@admin.com"
-    },
-    {
-      "id": 3,
-      "email": "braaAwin_2020@admin.com",
-      "password": "braaAwin_2020@admin.com"
-    },
-    {
-      "id": 4,
-      "email": "Ahmedqeshta_2020@admin.com",
-      "password": "Ahmedqeshta_2020@admin.com"
-    },
-    {
-      "id": 5,
-      "email": "New_email_123@email.com",
-      "password": "New_email_123@email.com"
-    },
-    {
-      "id": 6,
-      "email": "New_email_456@email.com",
-      "password": "New_email_456@email.com"
-    },
-    {
-      "id": 7,
-      "email": "New_email_456@email.com",
-      "password": "New_email_456@email.com"
-    },
-    {
-      "id": 8,
-      "email": "New_email_456@email.com",
-      "password": "New_email_456@email.com"
-    },
-    {
-      "id": 9,
-      "email": "New_email_456@email.com",
-      "password": "New_email_456@email.com"
-    },
-    {
-      "id": 10,
-      "email": "New_email_456@email.com",
-      "password": "New_email_456@email.com"
-    },
-    {
-      "id": 11,
-      "email": "New_email_456@email.com",
-      "password": "New_email_456@email.com"
-    },
-    {
-      "id": 12,
-      "email": "New_email_456@email.com",
-      "password": "New_email_456@email.com"
-    },
-    {
-      "id": 13,
-      "email": "vefe@mailinator.com",
-      "password": "Pa$$w0rd!"
-    },
-    {
-      "id": 14,
-      "email": "New_email_456@email.com",
-      "password": "New_email_456@email.com"
-    },
-    {
-      "id": 15,
-      "email": "New_email_456@email.com",
-      "password": "New_email_456@email.com"
-    },
-    {
-      "id": 16,
-      "email": "tarTveriv_123@mailinator.com",
-      "password": "tarTveriv_123@mailinator.com"
-    },
-    {
-      "id": 17,
-      "email": "gefezyxuhi@mailinator.com",
-      "password": "Pa$$w0rd!"
-    },
-    {
-      "id": 18,
-      "email": "New_email_456@email.com",
-      "password": "New_email_456@email.com"
-    },
-    {
-      "id": 19,
-      "email": "New_email_456@email.com",
-      "password": "New_email_456@email.com"
-    },
-    {
-      "id": 20,
-      "email": "New_email_456@email.com",
-      "password": "New_email_456@email.com"
+      "email": "moxu_12_AA@mailinator.com",
+      "password": "$2a$10$HpioCjXFFJNd085t48E0a.7y.Z6BLrbFrLHn5f4UhPCb3dkJtgxGK"
     }
   ]
 }

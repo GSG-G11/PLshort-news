@@ -1,4 +1,5 @@
 const { join } = require('path');
+const { compareSync } = require('bcryptjs');
 const { users } = require('../models/data.json');
 
 const middlewareAuth = ({ method, url, body }, res, next) => {
@@ -7,7 +8,7 @@ const middlewareAuth = ({ method, url, body }, res, next) => {
       ({ email: userEmail, password: userPassword }) => {
         const { password, email } = body;
         const checkEmail = email.trim() === userEmail.trim();
-        const checkPassword = password.trim() === userPassword.trim();
+        const checkPassword = compareSync(password.trim(), userPassword.trim());
         return checkEmail && checkPassword;
       },
     );
