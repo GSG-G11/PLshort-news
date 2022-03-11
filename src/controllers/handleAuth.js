@@ -1,5 +1,6 @@
 const { join } = require('path');
 const { writeFileSync } = require('fs');
+const { genSaltSync, hashSync } = require('bcryptjs');
 const data = require('../models/data.json');
 
 const getHomePage = (req, res, next) => {
@@ -26,13 +27,16 @@ const addUser = (req, res, next) => {
   const { users } = data;
   const { email, password } = req.body;
 
+  const salt = genSaltSync(10);
+  const hashPassword = hashSync(password.trim(), salt);
+
   // get the Id of the last user to generate a new Id
-  const newUserId = users[users.length - 1].id + 1;
+  const newUserId = users.length <= 0 ? 1 : users[users.length - 1].id + 1;
 
   const newUser = {
     id: newUserId,
     email: email.trim(),
-    password: password.trim(),
+    password: hashPassword,
   };
 
   // add the new User to the data object
