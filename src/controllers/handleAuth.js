@@ -47,8 +47,17 @@ const addUser = (req, res, next) => {
       join(__dirname, '..', 'models', 'data.json'),
       `${JSON.stringify(data, null, 2)}\n`,
     );
-    // res.status(201).json(newUser);
+    res.cookie('session_id', '$N4NpoN4020$N4NpoB8hZzGxGGJhvFeW');
     res.redirect('/home');
+  } catch (err) {
+    next(err);
+  }
+};
+
+const logout = (req, res, next) => {
+  try {
+    res.clearCookie('session_id');
+    res.redirect('/');
   } catch (err) {
     next(err);
   }
@@ -59,4 +68,5 @@ module.exports = {
   handleMiddleware,
   addUser,
   getRegisterPage,
+  logout,
 };

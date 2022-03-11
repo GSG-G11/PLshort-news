@@ -9,6 +9,46 @@
       "id": 2,
       "email": "moxu_12_AA@mailinator.com",
       "password": "$2a$10$HpioCjXFFJNd085t48E0a.7y.Z6BLrbFrLHn5f4UhPCb3dkJtgxGK"
+    },
+    {
+      "id": 3,
+      "email": "New_email_456@email.com",
+      "password": "$2a$10$PxMdAhTnETnN.u5VRWb6r.OnO0gAWt7zaR0nBkGn9Yfj5A8.dBjdG"
+    },
+    {
+      "id": 4,
+      "email": "New_email_456@email.com",
+      "password": "$2a$10$8zv7jKhTai6L1wL0odCOGevvDmG430mqn3Y5X8DfyLlGDgsKKlvzq"
+    },
+    {
+      "id": 5,
+      "email": "New_email_456@email.com",
+      "password": "$2a$10$ZN36BeNZS9dKckZyNkvriO9iJIAb.eR/aS3j2dg1RUuaXwUFhYP3K"
+    },
+    {
+      "id": 6,
+      "email": "New_email_456@email.com",
+      "password": "$2a$10$MMZS1eVqhcJkWuTsfqGD.umKfgvgp9NBLIOIwbec3EpEtgUv.wmyC"
+    },
+    {
+      "id": 7,
+      "email": "cuxox@mailinator.com",
+      "password": "$2a$10$1NqPbicRFezmpxjoY2O0W.iNNK3sTeG3poeYV/GF9BIS4dam0neAG"
+    },
+    {
+      "id": 8,
+      "email": "javotu_A12@mailinator.com",
+      "password": "$2a$10$B4dN4dsd8oP0/sV3.rdL1uQucz2fde4VuMBWUM4j67e3iILZaCQgS"
+    },
+    {
+      "id": 9,
+      "email": "pebol@mailinator.com",
+      "password": "$2a$10$lkVp57qSL2206Pa9CzLESOqeKC4SLj3sVfkstdqWhyyzlITj.IDdq"
+    },
+    {
+      "id": 10,
+      "email": "boxaga@mailinator.com",
+      "password": "$2a$10$Gu1sFvchy89OqQ5WBdkX7Oc.bMZepQP63FQgccFMWCrM/KV7KtVmW"
     }
   ]
 }
