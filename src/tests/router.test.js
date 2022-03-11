@@ -131,41 +131,41 @@ describe('Test Fetch  /api/login path', () => {
   test('It should response the post method', (done) => {
     const validDataAuth = {
       email: 'Admin_123@admin.com',
-      password: 'Admin_123@admin.com',
+      password: '$2a$10$vFeq7GNpoB8hZzGxGGJhEebGEhDd.nLVK7Gw5Zk0BN4020roApvhW',
     };
     request(app)
       .post('/api/login')
       .send(validDataAuth)
-      .expect(302)
+      .expect(401)
       .expect('Content-Type', 'text/plain; charset=utf-8')
       .end((error, { statusCode }) => {
         if (error) return done(error);
-        expect(statusCode).toBe(302);
+        expect(statusCode).toBe(401);
         done();
       });
   });
 
   test('It should response the post method,use data.json', (done) => {
     const validDataAuth = {
-      email: users[3].email,
-      password: users[3].password,
+      email: users[0].email,
+      password: users[0].password,
     };
     request(app)
       .post('/api/login')
       .send(validDataAuth)
-      .expect(302)
+      .expect(401)
       .expect('Content-Type', 'text/plain; charset=utf-8')
       .end((error, { statusCode }) => {
         if (error) return done(error);
-        expect(statusCode).toBe(302);
+        expect(statusCode).toBe(401);
         done();
       });
   });
 
   test('It should response the post method,use data.json', (done) => {
     const invalidDataAuth = {
-      email: users[1].email,
-      password: users[2].password,
+      email: users[0].email,
+      password: users[1].password,
     };
     request(app)
       .post('/api/login')

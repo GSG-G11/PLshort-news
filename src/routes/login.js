@@ -7,9 +7,11 @@ const {
   handleMiddleware,
   addUser,
   getRegisterPage,
+  logout
 } = require('../controllers/handleAuth');
 
 login.route('/home').get(getHomePage);
+login.route('/logout').get(logout);
 
 login.route('/api/login').post(handleMiddleware);
 
