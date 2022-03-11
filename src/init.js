@@ -13,6 +13,7 @@ module.exports = (app) => {
   app.use(express.urlencoded({ extended: false }));
   app.use(hidePoweredBy());
 
+  app.use(middlewareAuth);
   // set cache age (maxAge) to 30 days
   app.use(
     express.static(join(__dirname, '..', 'public'), {
@@ -20,6 +21,5 @@ module.exports = (app) => {
     }),
   );
 
-  app.use(middlewareAuth);
   app.use(router);
 };
