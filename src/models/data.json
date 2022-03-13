@@ -4,6 +4,16 @@
       "id": 1,
       "email": "Admin_123@admin.com",
       "password": "$2a$10$pIo9GKTimpsLiwJDtYoiVOg5wYjYSI21svHU25fmhsm34s21TOaEq"
+    },
+    {
+      "id": 2,
+      "email": "pygu@mailinator.com",
+      "password": "$2a$10$dh0vFJNrKrFnwng/Dcja8.1kZ26tGG8eG2lPAXvWjqoKoxK5rvt7S"
+    },
+    {
+      "id": 3,
+      "email": "tymytyqyri@mailinator.com",
+      "password": "$2a$10$3xCfFAfUhnIRl4rYCi5jkus1Y3lN4EjuZbusT60NUcotTMYMFYHRG"
     }
   ]
 }
