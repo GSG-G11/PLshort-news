@@ -8,10 +8,11 @@ const {
   getRegisterPage,
   logout,
 } = require('../controllers/handleAuth');
+const { redirectToDefault } = require('../middleware/authMiddleware');
 
-auth.get('/logout', logout);
-auth.post('/api/login', login);
-auth.post('/api/register', register);
-auth.get('/register', getRegisterPage);
+auth.get('/logout', redirectToDefault, logout);
+auth.post('/api/login', redirectToDefault, login);
+auth.post('/api/register', redirectToDefault, register);
+auth.get('/register', redirectToDefault, getRegisterPage);
 
 module.exports = auth;
