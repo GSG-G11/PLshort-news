@@ -23,9 +23,11 @@
     "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
+   
     "env2": "^2.2.2",
     "express": "^4.17.3",
     "helmet": "^5.0.2",
+    "jsonwebtoken": "^8.5.1",
     "node-fetch": "^2.6.7"
   },
   "devDependencies": {

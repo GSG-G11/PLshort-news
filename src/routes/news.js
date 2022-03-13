@@ -1,10 +1,13 @@
 const express = require('express');
+const { getHomePage } = require('../controllers/handleAuth');
 
-const news = express();
+const router = express.Router();
 
 const { getNews, handleSearch } = require('../controllers/handleNews');
+const { authenticateToken } = require('../middleware/authMiddleware');
 
-news.route('/api/news').post(getNews);
-news.route('/api/news/search').post(handleSearch);
+router.get('/home', authenticateToken, getHomePage);
+router.post('/api/news', authenticateToken, getNews);
+router.post('/api/news/search', authenticateToken, handleSearch);
 
-module.exports = news;
+module.exports = router;

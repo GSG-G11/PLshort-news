@@ -4,7 +4,7 @@ const compression = require('compression');
 const { hidePoweredBy } = require('helmet');
 const cookieParser = require('cookie-parser');
 const router = require('./routes/index');
-const middlewareAuth = require('./controllers/middleware');
+// const middlewareAuth = require('./controllers/middleware');
 
 module.exports = (app) => {
   app.use(cookieParser());
@@ -13,7 +13,7 @@ module.exports = (app) => {
   app.use(express.urlencoded({ extended: false }));
   app.use(hidePoweredBy());
 
-  app.use(middlewareAuth);
+  // app.use(middlewareAuth);
   // set cache age (maxAge) to 30 days
   app.use(
     express.static(join(__dirname, '..', 'public'), {

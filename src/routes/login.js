@@ -1,21 +1,17 @@
 const express = require('express');
 
-const login = express();
+const auth = express.Router();
 
 const {
-  getHomePage,
-  handleMiddleware,
-  addUser,
+  login,
+  register,
   getRegisterPage,
-  logout
+  logout,
 } = require('../controllers/handleAuth');
 
-login.route('/home').get(getHomePage);
-login.route('/logout').get(logout);
+auth.get('/logout', logout);
+auth.post('/api/login', login);
+auth.post('/api/register', register);
+auth.get('/register', getRegisterPage);
 
-login.route('/api/login').post(handleMiddleware);
-
-login.route('/api/register').post(addUser);
-login.route('/register').get(getRegisterPage);
-
-module.exports = login;
+module.exports = auth;
