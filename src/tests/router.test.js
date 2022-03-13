@@ -3,7 +3,10 @@
 const request = require('supertest');
 
 const app = require('../app');
-const { users } = require('../models/data.json');
+const { users } = require('../models/dataOfTest.json');
+const { rebuild } = require('../models/reBuild');
+
+afterAll(() => rebuild());
 
 describe('Test the root path', () => {
   test('It should response the GET method', (done) => {
@@ -23,11 +26,11 @@ describe('Test the root path', () => {
   test('It should response the GET method', (done) => {
     request(app)
       .get('/home')
-      .expect(200)
+      .expect(401)
       .expect('Content-Type', 'text/html; charset=UTF-8')
       .end((error, response) => {
         if (error) return done(error);
-        expect(response.statusCode).toBe(200);
+        expect(response.statusCode).toBe(401);
         done();
       });
   });
@@ -53,13 +56,11 @@ describe('Test Fetch  /api/news path', () => {
     request(app)
       .post('/api/news')
       .send(categoryAll)
-      .expect(201)
-      .expect('Content-Type', /json/)
-      .end((error, { statusCode, body }) => {
+      .expect(401)
+      .expect('Content-Type', 'text/html; charset=UTF-8')
+      .end((error, { statusCode }) => {
         if (error) return done(error);
-        const { category } = body;
-        expect(statusCode).toBe(201);
-        expect(category).toBe('all');
+        expect(statusCode).toBe(401);
         done();
       });
   });
@@ -68,11 +69,11 @@ describe('Test Fetch  /api/news path', () => {
     request(app)
       .post('/api/news/search')
       .send(categoryAll)
-      .expect(201)
-      .expect('Content-Type', /json/)
+      .expect(401)
+      .expect('Content-Type', 'text/html; charset=UTF-8')
       .end((error, { statusCode }) => {
         if (error) return done(error);
-        expect(statusCode).toBe(201);
+        expect(statusCode).toBe(401);
         done();
       });
   });
@@ -82,13 +83,11 @@ describe('Test Fetch  /api/news path', () => {
     request(app)
       .post('/api/news')
       .send(categorySport)
-      .expect(201)
-      .expect('Content-Type', /json/)
-      .end((error, { statusCode, body }) => {
+      .expect(401)
+      .expect('Content-Type', 'text/html; charset=UTF-8')
+      .end((error, { statusCode }) => {
         if (error) return done(error);
-        const { category } = body;
-        expect(statusCode).toBe(201);
-        expect(category).toBe('sport');
+        expect(statusCode).toBe(401);
         done();
       });
   });
@@ -98,13 +97,11 @@ describe('Test Fetch  /api/news path', () => {
     request(app)
       .post('/api/news')
       .send(categoryScience)
-      .expect(201)
-      .expect('Content-Type', /json/)
-      .end((error, { statusCode, body }) => {
+      .expect(401)
+      .expect('Content-Type', 'text/html; charset=UTF-8')
+      .end((error, { statusCode }) => {
         if (error) return done(error);
-        const { category } = body;
-        expect(statusCode).toBe(201);
-        expect(category).toBe('science');
+        expect(statusCode).toBe(401);
         done();
       });
   });
@@ -136,11 +133,11 @@ describe('Test Fetch  /api/login path', () => {
     request(app)
       .post('/api/login')
       .send(validDataAuth)
-      .expect(401)
+      .expect(302)
       .expect('Content-Type', 'text/plain; charset=utf-8')
       .end((error, { statusCode }) => {
         if (error) return done(error);
-        expect(statusCode).toBe(401);
+        expect(statusCode).toBe(302);
         done();
       });
   });
@@ -153,11 +150,11 @@ describe('Test Fetch  /api/login path', () => {
     request(app)
       .post('/api/login')
       .send(validDataAuth)
-      .expect(401)
+      .expect(302)
       .expect('Content-Type', 'text/plain; charset=utf-8')
       .end((error, { statusCode }) => {
         if (error) return done(error);
-        expect(statusCode).toBe(401);
+        expect(statusCode).toBe(302);
         done();
       });
   });
@@ -165,16 +162,16 @@ describe('Test Fetch  /api/login path', () => {
   test('It should response the post method,use data.json', (done) => {
     const invalidDataAuth = {
       email: users[0].email,
-      password: users[1].password,
+      password: `${users[0].password}-pa$$w0rd`,
     };
     request(app)
       .post('/api/login')
       .send(invalidDataAuth)
-      .expect(401)
-      .expect('Content-Type', 'text/html; charset=UTF-8')
+      .expect(302)
+      .expect('Content-Type', 'text/plain; charset=utf-8')
       .end((error, { statusCode }) => {
         if (error) return done(error);
-        expect(statusCode).toBe(401);
+        expect(statusCode).toBe(302);
         done();
       });
   });
