@@ -1,9 +1,9 @@
 const { join } = require('path');
 const { writeFileSync } = require('fs');
-const { sign } = require('jsonwebtoken');
 const data = require('../models/data.json');
 const { hashPassword, comparePasswords } = require('./handleHash');
 const usersArray = require('../models/data.json');
+const { generateToken } = require('./handleToken');
 
 const relativePath = `${__dirname}/../../public/`;
 
@@ -43,16 +43,22 @@ module.exports = {
         join(__dirname, '..', 'models', 'data.json'),
         `${JSON.stringify(data, null, 2)}\n`,
       );
-      const accessToken = sign(
-        { email: newUser.email, password: newUser.password },
-        process.env.ACCESS_TOKEN_SECRET,
-      );
-      res.cookie('accessToken', `Bearer ${accessToken}`).redirect('/home');
+
+      generateToken(newUser, process.env.ACCESS_TOKEN_SECRET)
+        .then((token) => {
+          res
+            .status(301)
+            .cookie('accessToken', `Bearer ${token}`)
+            .redirect('/home');
+        })
+        .catch((error) => {
+          next(error);
+        });
     } catch (err) {
       next(err);
     }
   },
-  login: async ({ body }, res) => {
+  login: async ({ body }, res, next) => {
     const { email, password } = body;
     const { users } = usersArray;
     const newsFiltered = users.filter(
@@ -63,11 +69,16 @@ module.exports = {
 
     if (newsFiltered.length >= 1) {
       const newUser = { email, password: await hashPassword(password) };
-      const accessToken = sign(newUser, process.env.ACCESS_TOKEN_SECRET);
-      res
-        .status(301)
-        .cookie('accessToken', `Bearer ${accessToken}`)
-        .redirect('/home');
+      generateToken(newUser, process.env.ACCESS_TOKEN_SECRET)
+        .then((token) => {
+          res
+            .status(301)
+            .cookie('accessToken', `Bearer ${token}`)
+            .redirect('/home');
+        })
+        .catch((error) => {
+          next(error);
+        });
     } else {
       res.status(401).sendFile(join(relativePath, 'error', '401.html'));
     }
@@ -75,8 +86,7 @@ module.exports = {
 
   logout: (_, res, next) => {
     try {
-      res.clearCookie('accessToken');
-      res.redirect('/');
+      res.clearCookie('accessToken').clearCookie('userName').redirect('/');
     } catch (err) {
       next(err);
     }

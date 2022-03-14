@@ -26,11 +26,11 @@ describe('Test the root path', () => {
   test('It should response the GET method', (done) => {
     request(app)
       .get('/home')
-      .expect(401)
-      .expect('Content-Type', 'text/html; charset=UTF-8')
+      .expect(302)
+      .expect('Content-Type', 'text/plain; charset=utf-8')
       .end((error, response) => {
         if (error) return done(error);
-        expect(response.statusCode).toBe(401);
+        expect(response.statusCode).toBe(302);
         done();
       });
   });
@@ -56,11 +56,11 @@ describe('Test Fetch  /api/news path', () => {
     request(app)
       .post('/api/news')
       .send(categoryAll)
-      .expect(401)
-      .expect('Content-Type', 'text/html; charset=UTF-8')
+      .expect(302)
+      .expect('Content-Type', 'text/plain; charset=utf-8')
       .end((error, { statusCode }) => {
         if (error) return done(error);
-        expect(statusCode).toBe(401);
+        expect(statusCode).toBe(302);
         done();
       });
   });
@@ -69,11 +69,11 @@ describe('Test Fetch  /api/news path', () => {
     request(app)
       .post('/api/news/search')
       .send(categoryAll)
-      .expect(401)
-      .expect('Content-Type', 'text/html; charset=UTF-8')
+      .expect(302)
+      .expect('Content-Type', 'text/plain; charset=utf-8')
       .end((error, { statusCode }) => {
         if (error) return done(error);
-        expect(statusCode).toBe(401);
+        expect(statusCode).toBe(302);
         done();
       });
   });
@@ -83,11 +83,11 @@ describe('Test Fetch  /api/news path', () => {
     request(app)
       .post('/api/news')
       .send(categorySport)
-      .expect(401)
-      .expect('Content-Type', 'text/html; charset=UTF-8')
+      .expect(302)
+      .expect('Content-Type', 'text/plain; charset=utf-8')
       .end((error, { statusCode }) => {
         if (error) return done(error);
-        expect(statusCode).toBe(401);
+        expect(statusCode).toBe(302);
         done();
       });
   });
@@ -97,11 +97,11 @@ describe('Test Fetch  /api/news path', () => {
     request(app)
       .post('/api/news')
       .send(categoryScience)
-      .expect(401)
-      .expect('Content-Type', 'text/html; charset=UTF-8')
+      .expect(302)
+      .expect('Content-Type', 'text/plain; charset=utf-8')
       .end((error, { statusCode }) => {
         if (error) return done(error);
-        expect(statusCode).toBe(401);
+        expect(statusCode).toBe(302);
         done();
       });
   });

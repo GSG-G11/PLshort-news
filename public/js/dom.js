@@ -107,6 +107,11 @@ addListener('#search-input', 'keyup', (event) => {
 });
 
 window.onload = () => {
+  const cookies = document.cookie
+    .split(' ')
+    .find((row) => row.startsWith('userName='))
+    .split('=')[1];
+  querySelector('#username').textContent = cookies;
   const defaultCategory = 'all';
   querySelector('#search-input').dataset.category = defaultCategory;
   handleGetNews(defaultCategory);
