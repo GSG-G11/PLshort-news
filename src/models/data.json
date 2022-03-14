@@ -7,13 +7,28 @@
     },
     {
       "id": 2,
-      "email": "pygu@mailinator.com",
-      "password": "$2a$10$dh0vFJNrKrFnwng/Dcja8.1kZ26tGG8eG2lPAXvWjqoKoxK5rvt7S"
+      "email": "rosyf@mailinator.com",
+      "password": "$2a$10$Me9.zuCPoFk7X.Q7rNBVfuG1DZ3nAjUyQU/sGz5OGOs8XQe3l5vw6"
     },
     {
       "id": 3,
-      "email": "tymytyqyri@mailinator.com",
-      "password": "$2a$10$3xCfFAfUhnIRl4rYCi5jkus1Y3lN4EjuZbusT60NUcotTMYMFYHRG"
+      "email": "hulo@mailinator.com",
+      "password": "$2a$10$IUdHwgDi2PB0mcqeT5uwf.XwoiyixXgaBgRK.ZWcd4w1bKV9Mydxu"
+    },
+    {
+      "id": 4,
+      "email": "New_email_456@email.com",
+      "password": "$2a$10$4P80lkjWxh.nahuYjQuNiejZa6DE96vPTeWr7KzBWRciPN2c5u2tW"
+    },
+    {
+      "id": 5,
+      "email": "New_email_456@email.com",
+      "password": "$2a$10$7IWyfS6Eng4ey84xYjC8ceLldLUiNMR4KgbnlpjUDxYiMPMaLi4ZG"
+    },
+    {
+      "id": 6,
+      "email": "New_email_456@email.com",
+      "password": "$2a$10$.yRRKwYOSfh4SC7EjOROaeiBskiKk1UCMFf6g3pYSUB/Z9fIRjXqe"
     }
   ]
 }
